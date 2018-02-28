@@ -1,0 +1,19 @@
+<mat-toolbar fxLayout="row" fxLayoutGap="12px">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Photos</span>
+</mat-toolbar>
+
+<div fxLayout="row" fxLayoutGap="12px">
+  <input matInput [(ngModel)]="flexBorderSize" type="number" min="1" max="50" placeholder="Space between images">
+  <input matInput [(ngModel)]="flexImageSize" type="number" min="0" max="50" placeholder="Image size">
+  <input matInput [(ngModel)]="galleryName" placeholder="Gallery name">
+</div>
+
+<div>
+  <app-gallery (viewerChange)="onViewerVisibilityChanged($event)"
+               [flexBorderSize]="flexBorderSize"
+               [flexImageSize]="flexImageSize"
+               [galleryName]="galleryName"></app-gallery>
+</div>
