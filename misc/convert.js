@@ -288,16 +288,17 @@ function saveMetadataFile(sortedMetadataArray) {
     var metadataAsJSON = JSON.stringify(sortedMetadataArray, null, null);
     console.log('\nSaving metadata file...');
 
-    fs.writeFile(assetsAbsoluteBasePath + 'data.json', metadataAsJSON, function (err) {
+    fs.writeFileSync(assetsAbsoluteBasePath + 'data.json', metadataAsJSON, function (err) {
         if (err) throw err;
         console.log('...done (metadata)');
     });
 
-    var dirs = fs.readdirSync(assetsAbsoluteBasePath);
+    var dirs = fs.readdirSync(projectRoot + '/src/assets/img/gallery');
     var jsonDirs = JSON.stringify(dirs, null, null);
     console.log('\nSaving directory file...');
+    console.log('\n' + jsonDirs);
 
-    fs.writeFile(projectRoot + '/src/assets/img/gallery/dirs.json', dirs, function(err) {
+    fs.writeFileSync(projectRoot + '/src/assets/img/gallery/dirs.json', dirs, function(err) {
         if (err) throw err;
         console.log('...done (dirs)');
     });
