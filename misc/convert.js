@@ -293,12 +293,11 @@ function saveMetadataFile(sortedMetadataArray) {
         console.log('...done (metadata)');
     });
 
-    var dirs = fs.readdirSync(projectRoot + '/src/assets/img/gallery');
-    var jsonDirs = JSON.stringify(dirs, null, null);
+    var galleries = fs.readdirSync(projectRoot + '/src/assets/img/gallery');
+    var jsonGalleries = JSON.stringify(galleries, null, null);
     console.log('\nSaving directory file...');
-    console.log('\n' + jsonDirs);
 
-    fs.writeFileSync(projectRoot + '/src/assets/img/gallery/dirs.json', dirs, function(err) {
+    fs.writeFileSync(projectRoot + '/src/assets/img/galleries.json', jsonGalleries, function(err) {
         if (err) throw err;
         console.log('...done (dirs)');
     });
