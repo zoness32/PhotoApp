@@ -297,7 +297,7 @@ function saveMetadataFile(sortedMetadataArray) {
     var jsonDirs = JSON.stringify(dirs, null, null);
     console.log('\nSaving directory file...');
 
-    fs.writeFile(assetsAbsoluteBasePath + 'dirs.json', dirs, function(err) {
+    fs.writeFile(projectRoot + '/src/assets/img/gallery/dirs.json', dirs, function(err) {
         if (err) throw err;
         console.log('...done (dirs)');
     });
