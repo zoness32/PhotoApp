@@ -292,6 +292,15 @@ function saveMetadataFile(sortedMetadataArray) {
         if (err) throw err;
         console.log('...done (metadata)');
     });
+
+    var dirs = fs.readdirSync(assetsAbsoluteBasePath);
+    var jsonDirs = JSON.stringify(dirs, null, null);
+    console.log('\nSaving directory file...');
+
+    fs.writeFile(assetsAbsoluteBasePath + 'dirs.json', dirs, function(err) {
+        if (err) throw err;
+        console.log('...done (dirs)');
+    });
 }
 
 function calcRelativeLuminance(color) {
