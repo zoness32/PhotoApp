@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   public flexImageSize = 7;
   public galleryName = '';
   private imageDataStaticPath = 'assets/img/';
-  private galleries: any;
+  public galleries: any;
 
   ngOnInit() {
     this.getGalleries();
