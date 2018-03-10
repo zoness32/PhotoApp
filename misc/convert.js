@@ -297,7 +297,7 @@ function saveMetadataFile(sortedMetadataArray) {
     var jsonDirs = JSON.stringify(dirs, null, null);
     console.log('\nSaving directory file...');
 
-    fs.writeFile('/home/pi/hosting/galleries/dirs.json', dirs, function(err) {
+    fs.writeFile('/home/pi/hosting/dirs.json', dirs, function(err) {
         if (err) throw err;
         console.log('...saved to /home/pi/hosting/galleries/dirs.json');
     });
