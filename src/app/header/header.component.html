@@ -20,7 +20,7 @@
       <app-gallery (viewerChange)="onViewerVisibilityChanged($event)"
                    [flexBorderSize]="flexBorderSize"
                    [flexImageSize]="flexImageSize"
-                   [providedMetadataUri]="getGalleryUri()"
+                   [providedMetadataUri]="getGalleryUri(gallery)"
                    [galleryName]="gallery"></app-gallery>
     </mat-card-content>
   </mat-card>

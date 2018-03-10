@@ -25,13 +25,13 @@ export class HeaderComponent implements OnInit {
   }
 
   getGalleries() {
-    return this.httpClient.get(`http://localhost:3000/dirs.json`)
+    return this.httpClient.get(`http://192.168.1.14:3000/dirs.json`)
       .subscribe(data => {
         this.galleries = data;
       });
   }
 
   getGalleryUri(galleryName: string) {
-    return `http://localhost:3000/galleries/${galleryName}/data.json`;
+    return `http://192.168.1.14:3000/galleries/${galleryName}/data.json`;
   }
 }
