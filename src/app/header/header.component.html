@@ -11,9 +11,17 @@
   <input matInput [(ngModel)]="galleryName" placeholder="Gallery name">
 </div>
 
-<div>
-  <app-gallery (viewerChange)="onViewerVisibilityChanged($event)"
-               [flexBorderSize]="flexBorderSize"
-               [flexImageSize]="flexImageSize"
-               [galleryName]="galleryName"></app-gallery>
+<div *ngFor="let gallery of galleries">
+  <mat-card>
+    <mat-card-header>
+      {{gallery}}
+    </mat-card-header>
+    <mat-card-content>
+      <app-gallery (viewerChange)="onViewerVisibilityChanged($event)"
+                   [flexBorderSize]="flexBorderSize"
+                   [flexImageSize]="flexImageSize"
+                   [providedMetadataUri]="getGalleryUri()"
+                   [galleryName]="gallery"></app-gallery>
+    </mat-card-content>
+  </mat-card>
 </div>
