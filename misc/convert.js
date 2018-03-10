@@ -293,7 +293,7 @@ function saveMetadataFile(sortedMetadataArray) {
         console.log('...done (metadata)');
     });
 
-    var dirs = fs.readdirSync(assetsAbsoluteBasePath);
+    var dirs = fs.readdirSync('/home/pi/hosting/galleries');
     var jsonDirs = JSON.stringify(dirs, null, null);
     console.log('\nSaving directory file...');
 
